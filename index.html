@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Checklist Grading</title> <!-- CS 159 -->
+        <link rel="stylesheet" href="https://mariochao.github.io/src/style-no-hover.css">
+		<link rel="stylesheet" href="https://mariochao.github.io/dream-game/src/assets/styles/navigation-bar.css">
+		<link rel="icon" href="">
+        <script type="module" src="./src/scripts/index.js"></script>
+    </head>
+    <body class="navbar-body" style="font-family: 'PT Serif'; background-color: lightgoldenrodyellow;">
+		<!-- Navigation bar -->
+		<div class="navbar" style="text-align: center; background-color: #FEEAAA;">
+			<h1>
+				Checklist Grading Tool
+			</h1>
+		</div>
+		<!-- Body -->
+		<div id="real-body">
+            <div style="display: flex; justify-content: center;">
+				<div style="width: 100%; max-width: 770px;">
+                    <p><label for="data-list-textarea">Data list (markdown bullet points):</label></p>
+                    <textarea id="data-list-textarea" style="resize: both;"></textarea>
+                    <p>Feedbacks:</p>
+                    <ul id="checkbox-list"></ul>
+                    <p>Result:</p>
+                    <ul id="result-list"></ul>
+				</div>
+            </div>
+		</div>
+    </body>
+</html>
