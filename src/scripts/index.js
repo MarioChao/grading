@@ -27,6 +27,8 @@ function refreshResult() {
 function parseLine(line) {
     let newLine = ""
     let stopReplacing = false
+
+    // Convert bullet points to spaces
     for (let char of line) {
         if (!stopReplacing && (char == "*" || char == "-")) {
             stopReplacing = true;
@@ -36,9 +38,14 @@ function parseLine(line) {
         if (stopReplacing) newLine += char;
         else if (char == " ") newLine += "&emsp;";
     }
+
+    // Convert modifiers (bold, italics, strikethrough)
     newLine = newLine.replaceAll(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
     newLine = newLine.replaceAll(/\*(.*?)\*/g, "<em>$1</em>");
     newLine = newLine.replaceAll(/\~\~(.*?)\~\~/g, "<s>$1</s>");
+
+    // Remove extra backslash
+    newLine = newLine.replaceAll(/\\(.)/g, "$1");
     return newLine;
 }
 
